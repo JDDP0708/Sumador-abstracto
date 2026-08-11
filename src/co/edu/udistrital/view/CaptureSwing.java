@@ -9,8 +9,9 @@ import javax.swing.JOptionPane;
 public class CaptureSwing implements Input {
 
     @Override
-    public double getInfo(String message) {
-        String inputString = JOptionPane.showInputDialog(message);
+    public double getInfo() {
+        
+        String inputString = JOptionPane.showInputDialog("");
         
         return Double.parseDouble(inputString);
     }
