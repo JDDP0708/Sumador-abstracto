@@ -4,10 +4,12 @@
  */
 package co.edu.udistrital;
 
-import co.edu.udistrital.controller.Controller;
 import co.edu.udistrital.model.Addition;
-import co.edu.udistrital.view.CaptureConsole;
-import co.edu.udistrital.view.ShowConsole;
+import co.edu.udistrital.model.Operation;
+import co.edu.udistrital.view.AbstractInputOutputFactory;
+import co.edu.udistrital.view.Input;
+import co.edu.udistrital.view.Output;
+import co.edu.udistrital.view.SwingManufacturer;
 
 /**
  *
@@ -19,8 +21,24 @@ public class AppMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Controller controller = new Controller(new CaptureConsole(), new ShowConsole(), new Addition());
-        controller.run();
+
+        AbstractInputOutputFactory abstractFactoryInputOutput = new SwingManufacturer();
+
+        Input input = abstractFactoryInputOutput.getInput();
+        Output output = abstractFactoryInputOutput.getOutput();
+        Operation operation = new Addition();
+
+        output.showInfo("Bienvenidos al sumador a continuacion se pediran los datos.");
+
+        output.showInfo("Escriba el primer operando");
+        double firstOperand = input.getInfo();
+        output.showInfo("Escriba el segundo operando");
+        double secondOperand = input.getInfo();
+
+        double result = operation.execute(firstOperand, secondOperand);
+
+        output.showInfo("El resultado de la suma es: " + result);
+        output.showInfo("Gracias por usar el sumador.");
     }
-    
+
 }
