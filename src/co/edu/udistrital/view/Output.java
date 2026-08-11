@@ -9,5 +9,5 @@ package co.edu.udistrital.view;
  * @author Estudiantes
  */
 public interface Output {
-    public void showIndo(String message);
+    public void showInfo(String message);
 }
