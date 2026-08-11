@@ -8,7 +8,8 @@ package co.edu.udistrital.view;
  *
  * @author Estudiantes
  */
-public class ShowConsole {
+public class ShowConsole implements Output {
+    @Override
     public void showInfo(String message) {
         System.out.println(message);
     }
