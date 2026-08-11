@@ -18,6 +18,7 @@ public class CaptureConsole implements Input {
         sc = new Scanner(System.in);
     }
     
+    @Override
     public double getInfo(String message) {
         System.out.print(message + ": ");
         Double data = sc.nextDouble();
