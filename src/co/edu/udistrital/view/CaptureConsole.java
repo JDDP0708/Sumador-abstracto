@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author Estudiantes
  */
-public class CaptureConsole {
+public class CaptureConsole implements Input {
 
     private final Scanner sc;
 
@@ -18,9 +18,9 @@ public class CaptureConsole {
         sc = new Scanner(System.in);
     }
     
-    public String readInfo(String message) {
+    public double getInfo(String message) {
         System.out.print(message + ": ");
-        String data = sc.nextLine();
+        Double data = sc.nextDouble();
         
         System.out.println("");
         return data;
