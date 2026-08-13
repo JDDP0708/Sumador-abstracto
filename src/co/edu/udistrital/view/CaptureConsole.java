@@ -19,8 +19,8 @@ public class CaptureConsole implements Input {
     }
     
     @Override
-    public double getInfo() {
-        Double data = sc.nextDouble();
+    public String getInfo() {
+        String data = sc.nextLine();
         return data;
     }
 }
