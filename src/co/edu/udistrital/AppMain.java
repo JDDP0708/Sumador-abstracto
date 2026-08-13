@@ -5,6 +5,7 @@
 package co.edu.udistrital;
 
 import co.edu.udistrital.view.ConsoleManufacturer;
+import co.edu.udistrital.view.FileManufacturer;
 import co.edu.udistrital.view.SwingManufacturer;
 
 /**
@@ -34,6 +35,10 @@ public class AppMain {
         prueba(client);
         
         client.setInputOutput(new ConsoleManufacturer());
+        
+        prueba(client);
+        
+        client.setInputOutput(new FileManufacturer());
         
         prueba(client);
     }
