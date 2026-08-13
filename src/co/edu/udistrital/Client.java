@@ -29,7 +29,7 @@ public class Client {
         output.showInfo(message);
     }
     
-    public double get(){
+    public String get(){
         return input.getInfo();
     }
     
