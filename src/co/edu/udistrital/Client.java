@@ -13,10 +13,10 @@ import co.edu.udistrital.view.Output;
  */
 public class Client {
     
-    AbstractInputOutputFactory abstractFactoryInputOutput;
-    Input input;
-    Output output;
-    Operation operation;
+    private AbstractInputOutputFactory abstractFactoryInputOutput;
+    private Input input;
+    private Output output;
+    private Operation operation;
 
     public Client() {
         this.abstractFactoryInputOutput = new ConsoleManufacturer();
@@ -33,7 +33,7 @@ public class Client {
         return input.getInfo();
     }
     
-    public double add(double firstOperand, double secondOperand){
+    public double operate(double firstOperand, double secondOperand){
         return operation.execute(firstOperand, secondOperand);
     }
     
