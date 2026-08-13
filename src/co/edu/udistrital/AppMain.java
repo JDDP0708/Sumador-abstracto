@@ -4,6 +4,9 @@
  */
 package co.edu.udistrital;
 
+import co.edu.udistrital.view.ConsoleManufacturer;
+import co.edu.udistrital.view.SwingManufacturer;
+
 /**
  *
  * @author Estudiantes
@@ -17,6 +20,8 @@ public class AppMain {
 
         Client client = new Client();
 
+        client.setInputOutput(new SwingManufacturer());
+        
         client.send("Bienvenidos al sumador a continuacion se pediran los datos.");
 
         client.send("Escriba el primer operando");
@@ -24,10 +29,14 @@ public class AppMain {
         client.send("Escriba el segundo operando");
         double secondOperand = client.get();
 
-        double result = client.add(firstOperand, secondOperand);
+        double result = client.operate(firstOperand, secondOperand);
 
         client.send("El resultado de la suma es: " + result);
         client.send("Gracias por usar el sumador.");
+
+        client.setInputOutput(new ConsoleManufacturer());
+        
+        client.send("Bienvenidos al sumador a continuacion se pediran los datos.");
     }
 
 }
