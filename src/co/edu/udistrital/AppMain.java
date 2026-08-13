@@ -13,6 +13,15 @@ import co.edu.udistrital.view.SwingManufacturer;
  */
 public class AppMain {
 
+    private static void prueba(Client client) {
+        client.send("Bienvenidos al sumador a continuacion se pediran los datos.");
+
+        double result = client.operate(Double.parseDouble(client.get()), Double.parseDouble(client.get()));
+
+        client.send("El resultado de la suma es: " + result);
+        client.send("Gracias por usar el sumador.");
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -21,22 +30,12 @@ public class AppMain {
         Client client = new Client();
 
         client.setInputOutput(new SwingManufacturer());
+
+        prueba(client);
         
-        client.send("Bienvenidos al sumador a continuacion se pediran los datos.");
-
-        client.send("Escriba el primer operando");
-        double firstOperand = client.get();
-        client.send("Escriba el segundo operando");
-        double secondOperand = client.get();
-
-        double result = client.operate(firstOperand, secondOperand);
-
-        client.send("El resultado de la suma es: " + result);
-        client.send("Gracias por usar el sumador.");
-
         client.setInputOutput(new ConsoleManufacturer());
         
-        client.send("Bienvenidos al sumador a continuacion se pediran los datos.");
+        prueba(client);
     }
 
 }
