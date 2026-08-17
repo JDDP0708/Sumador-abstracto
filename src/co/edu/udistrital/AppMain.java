@@ -10,15 +10,6 @@ import co.edu.udistrital.view.SwingManufacturer;
  */
 public class AppMain {
 
-    private static void prueba(Client client) {
-        client.send("Bienvenidos al sumador a continuacion se pediran los datos.");
-
-        double result = client.operate(Double.parseDouble(client.get()), Double.parseDouble(client.get()));
-
-        client.send("El resultado de la suma es: " + result);
-        client.send("Gracias por usar el sumador.");
-    }
-
     /**
      * @param args the command line arguments
      */
@@ -28,15 +19,12 @@ public class AppMain {
 
         client.setInputOutput(new SwingManufacturer());
 
-        prueba(client);
-        
-        client.setInputOutput(new ConsoleManufacturer());
-        
-        prueba(client);
-        
-        client.setInputOutput(new FileManufacturer());
-        
-        prueba(client);
+        client.send("Bienvenidos al multiplicador, se pediran en orden el numero a multiplicar y por que entero hacerlo");
+
+        double result = client.multiplicate(Double.parseDouble(client.get()), Integer.parseInt(client.get()));
+
+        client.send("El resultado de la multiplicacion es: " + result);
+        client.send("Gracias por usar el multiplicador.");
     }
 
 }

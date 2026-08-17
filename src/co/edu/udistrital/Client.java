@@ -37,6 +37,14 @@ public class Client {
         return operation.execute(firstOperand, secondOperand);
     }
     
+    public double multiplicate(double firstOperand, int repetition) {
+        double result = 0;
+        for(int i = 0; i < repetition; i++){
+            result = operation.execute(result, firstOperand);
+        }
+        return result;
+    }
+    
     public void setInputOutput(AbstractInputOutputFactory abstractInputOutputFactory) {
         this.abstractFactoryInputOutput = abstractInputOutputFactory;
         updateInputOutput();
