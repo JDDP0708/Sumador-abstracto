@@ -4,13 +4,17 @@
  */
 package co.edu.udistrital.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Estudiantes
  */
-public class ShowConsole implements Output {
+public class ShowSwing implements Output {
+
     @Override
     public void showInfo(String message) {
-        System.out.println(message);
+        JOptionPane.showMessageDialog(null, message);
     }
+    
 }

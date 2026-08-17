@@ -8,9 +8,16 @@ package co.edu.udistrital.view;
  *
  * @author Estudiantes
  */
-public class ShowConsole implements Output {
+public class SwingManufacturer implements AbstractInputOutputFactory {
+
     @Override
-    public void showInfo(String message) {
-        System.out.println(message);
+    public Input getInput() {
+        return new CaptureSwing();
     }
+
+    @Override
+    public Output getOutput() {
+        return new ShowSwing();
+    }
+    
 }
